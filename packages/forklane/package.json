@@ -1,0 +1,33 @@
+{
+  "name": "forklane",
+  "version": "0.0.0",
+  "description": "API router-style distributed task queue - write task queues like API routes",
+  "license": "MIT",
+  "type": "module",
+  "main": "./src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@forklane/core": "workspace:*"
+  },
+  "devDependencies": {
+    "tsdown": "catalog:",
+    "vitest": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public",
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.js",
+        "require": "./dist/index.cjs"
+      }
+    }
+  }
+}
